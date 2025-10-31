@@ -6,7 +6,7 @@ trigger:
   exclude:
   - docs/* # Exclude the docs folder
 pool:
-  name: 'PA-7BMTVL3'
+  vmImage: 'ubuntu-latest'
   demands:
   - npm
 
