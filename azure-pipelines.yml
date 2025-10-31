@@ -6,9 +6,18 @@ trigger:
   exclude:
   - docs/* # Exclude the docs folder
 pool:
-  vmImage: 'ubuntu-latest'
-  demands:
-  - npm
+  name: 'PA-7BMTVL3'
+
+steps:
+- task: NodeTool@0
+  displayName: 'Use Node.js 18.x'
+  inputs:
+    versionSpec: '18.x'
+
+- task: Npm@1
+  displayName: 'npm ci'
+  inputs:
+    command: 'ci'
 
 variables:
   buildConfiguration: 'Release'
