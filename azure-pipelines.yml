@@ -8,6 +8,11 @@ trigger:
 pool:
   name: 'PA-7BMTVL3'
 
+variables:
+  buildConfiguration: 'Release'
+  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+  dotnetSdkVersion: '6.x'
+
 steps:
 - task: NodeTool@0
   displayName: 'Use Node.js 18.x'
@@ -18,13 +23,6 @@ steps:
   displayName: 'npm ci'
   inputs:
     command: 'ci'
-
-variables:
-  buildConfiguration: 'Release'
-  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '6.x'
-
-steps:
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
