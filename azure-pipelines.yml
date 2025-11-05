@@ -6,8 +6,8 @@ trigger:
   exclude:
   - docs/* # Exclude the docs folder
 pool:
-  vmImage: 'ubuntu-latest'
-  demands:
+ name: Default
+ demands: Agent.Name -equals PA-7BMTVL3
   - npm
 
 variables:
